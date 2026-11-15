@@ -127,11 +127,11 @@ const tileProvider = new Cesium.UrlTemplateImageryProvider({
 const hiRiseLayer = viewer.scene.imageryLayers.addImageryProvider(tileProvider);
 viewer.scene.imageryLayers.raiseToTop(hiRiseLayer);
 
-// Blend grayscale HiRISE hillshade with the underlying color MOLA map
-hiRiseLayer.alpha = 0.65;
-hiRiseLayer.contrast = 1.65;
-hiRiseLayer.brightness = 0.95;
-hiRiseLayer.gamma = 0.85;
+// HiRISE layer: fully opaque to prevent low-resolution MOLA pixel blocks from bleeding through
+hiRiseLayer.alpha = 1.0;
+hiRiseLayer.contrast = 1.35;
+hiRiseLayer.brightness = 1.05;
+hiRiseLayer.gamma = 0.95;
 
 // 7. Load Local DEM PNG into a 2D Elevation Matrix for A* Pathfinding
 let elevationGrid = [];
