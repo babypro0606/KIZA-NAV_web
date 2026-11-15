@@ -1,0 +1,43 @@
+<!-- index.html -->
+<!DOCTYPE html> <!-- Defines the document type as HTML5 -->
+<html lang="en"> <!-- Default language (switched at runtime by i18n.js: en / es / tr) -->
+<head> <!-- Contains meta-information, stylesheets, and scripts -->
+  <meta charset="UTF-8"> <!-- Sets character encoding to UTF-8 to support all characters -->
+  <title>KIZA-NAV — Mars Topographic Navigation</title> <!-- The title displayed on the browser tab -->
+  
+  <!-- Import CesiumJS library for 3D globe rendering -->
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.111/Build/Cesium/Cesium.js"></script> 
+  <!-- Import CesiumJS default CSS for widgets and UI elements -->
+  <link href="https://cesium.com/downloads/cesiumjs/releases/1.111/Build/Cesium/Widgets/widgets.css" rel="stylesheet"> 
+  
+  <!-- Import custom Google Fonts (Inter for UI text, JetBrains Mono for telemetry/data) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"> 
+  
+  <style> /* Internal CSS for basic page layout */
+    :root {
+      color-scheme: dark;
+    }
+    
+    * { box-sizing: border-box; } /* Ensure padding and borders are included in element total width/height */
+    
+    html, body, #cesiumContainer { /* Target the root elements and the main Cesium container */
+      width: 100%; /* Set width to 100% of the viewport */
+      height: 100%; /* Set height to 100% of the viewport */
+      margin: 0; /* Remove default browser margins */
+      padding: 0; /* Remove default browser padding */
+      overflow: hidden; /* Prevent scrollbars from appearing */
+      font-family: 'Inter', sans-serif; /* Set the default font family for the application */
+      background: #0a0b0e; /* Set a dark background color for the page behind the globe */
+    }
+  </style> <!-- End of internal CSS -->
+</head> <!-- End of head section -->
+<body> <!-- Contains the visible content of the page -->
+  
+  <!-- The main container div where the Cesium WebGL canvas will be injected -->
+  <div id="cesiumContainer"></div> 
+  
+  <!-- Link the external JavaScript file containing all application logic -->
+  <script type="module" src="./main.js"></script>
+
+</body> <!-- End of body section -->
+</html> <!-- End of HTML document -->
